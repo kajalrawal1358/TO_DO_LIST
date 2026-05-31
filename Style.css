@@ -1,0 +1,222 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Default Theme Colors */
+:root {
+    --bg-color: #f4f7ff;
+    --card-color: #ffffff;
+    --text-color: #222;
+    --primary-color: #6c63ff;
+    --completed-color: #999;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+.dark-mode {
+    --bg-color: #121212;
+    --card-color: #1f1f1f;
+    --text-color: #f5f5f5;
+    --primary-color: #8b7dff;
+    --completed-color: #777;
+}
+
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s ease;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--card-color);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+/* Dark Mode Button */
+#themeToggle {
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input Box */
+#taskInput {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+#taskInput:focus {
+    border-color: var(--primary-color);
+}
+
+/* Add Button */
+#addTaskBtn {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+#addTaskBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Task Counter */
+.task-counter {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* Empty Message */
+#emptyMessage {
+    text-align: center;
+    color: gray;
+    margin-top: 20px;
+}
+
+/* Task List */
+#taskList {
+    list-style: none;
+}
+
+/* Each Task Item */
+.task-item {
+    background: var(--bg-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px;
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    animation: fadeIn 0.3s ease;
+
+    transition: 0.3s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Task Text */
+.task-text {
+    flex: 1;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+
+/* Delete Button */
+.delete-btn {
+    border: none;
+    background: crimson;
+    color: white;
+
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #addTaskBtn {
+        width: 100%;
+    }
+}
